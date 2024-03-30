@@ -1,0 +1,19 @@
+<div
+  class="container"
+  style="background-color: #bedff1; width: 100%; height: 100%"
+>
+  <h1>Book Boolean</h1>
+  <p>You can't be a backend, but you can be a good bookend</p>
+  <div
+    class="card"
+    style="background-color: #bedff1; width: 100%; height: 100%"
+  >
+    <app-add-book
+      class="mt-10px"
+      (addBook)="onAddNewBook($event)"
+      [bkLst]="bookList"
+    ></app-add-book>
+    <div class="line"></div>
+    <app-table-book [bkLst]="bookList"></app-table-book>
+  </div>
+</div>

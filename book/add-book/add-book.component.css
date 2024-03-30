@@ -1,0 +1,27 @@
+.form-boolean {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.divs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+input {
+  background-color: #ffff;
+  color: #ababab;
+  border: 0;
+}
+.button {
+  background: #52b788;
+  width: 150px;
+  height: 41px;
+  border-radius: 30px;
+  border: 0;
+}

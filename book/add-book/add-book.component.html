@@ -1,0 +1,94 @@
+<div class="form-boolean">
+  <form action="" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="bookName divs">
+      <label for="">Book name</label>
+      <input
+        type="text"
+        name="bookName"
+        placeholder="Enter your book name"
+        ngModel
+        [(ngModel)]="bookName_v"
+        #bookName="ngModel"
+        required
+      />
+    </div>
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="!bookName.valid && bookName.touched"
+    >
+      BookName is required
+    </div>
+    <div class="author divs">
+      <label for="">Author</label>
+      <input
+        type="text"
+        name="author"
+        placeholder="Enter your book author"
+        ngModel
+        [(ngModel)]="author_v"
+        #author="ngModel"
+        required
+      />
+    </div>
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="!author.valid && author.touched"
+    >
+     Author name is required
+    </div>
+    <div class="pageCount divs">
+      <label for="">Page Count</label>
+      <input
+        type="number"
+        name="pageCount"
+        placeholder="Enter page count"
+        ngModel
+        [(ngModel)]="pageCount_v"
+        min="80"
+        #pageCount="ngModel"
+      />
+    </div>
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="pageCount.value<80 && pageCount.touched"
+    >
+     Page Count must be greater than 80.
+    </div>
+    <div class="price divs">
+      <label for="">Price</label>
+      <input
+        type="number"
+        name="price"
+        placeholder="Enter price"
+        ngModel
+        [(ngModel)]="price_v"
+        #price="ngModel"
+        min="5"
+        max="50"
+      />
+    </div>
+    <div
+    class="alert alert-danger mt-2"
+    *ngIf="(price.value<5 || price.value>50) && price.touched"
+  >
+   Price should be greater than 5 and less than 50.
+  </div>
+    <div class="title divs">
+      <label for="">Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter title"
+        [(ngModel)]="title_v"
+      />
+    </div>
+  </form>
+  <button
+    class="button"
+    [ngStyle]="{ 'background-color': bookList.length > 3 ? 'red' : '#52b788' }"
+    [disabled]="!check()"
+    (click)="addNewBook()"
+  >
+    Order
+  </button>
+</div>
